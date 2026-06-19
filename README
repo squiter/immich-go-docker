@@ -1,0 +1,28 @@
+# immich-go Docker
+
+A simple Docker image for running immich-go against an Immich instance.
+
+## Pull
+
+```bash
+docker pull ghcr.io/squiter/immich-go-docker:latest
+```
+
+## Run
+
+```bash
+docker run --rm ghcr.io/squiter/immich-go-docker:latest --version
+```
+
+## Example
+
+```bash
+docker run --rm \
+  --network immich_default \
+  -v /path/to/photos:/photos:ro \
+  ghcr.io/squiter/immich-go-docker:latest \
+  upload from-icloud \
+  --server=http://immich-server:2283 \
+  --api-key=YOUR_API_KEY \
+  /photos
+```
